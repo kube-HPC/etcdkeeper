@@ -1,4 +1,5 @@
-FROM golang:1.12 as build
+ARG BASE_PRIVATE_REGISTRY=""
+FROM ${BASE_PRIVATE_REGISTRY}golang:1.12 as build
 
 ENV GO111MODULE on
 ENV GOPROXY "https://goproxy.io"
@@ -12,7 +13,7 @@ RUN go mod download \
     && go build -o etcdkeeper.bin main.go
 
 
-FROM alpine:3.10
+FROM ${BASE_PRIVATE_REGISTRY}alpine:3.10
 
 ENV HOST="0.0.0.0"
 ENV PORT="8080"

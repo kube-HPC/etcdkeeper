@@ -1,3 +1,8 @@
+## forked from [etcdkeeper](https://github.com/evildecay/etcdkeeper)
+* added suitable default server for hkube
+* added refresh node
+* sync connect to etcd server
+
 ![image](https://github.com/evildecay/etcdkeeper/blob/master/logo/logo-horizontal.png)
 ## ETCD Keeper
 * Lightweight etcd web client.

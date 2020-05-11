@@ -11,6 +11,7 @@ import (
 	"github.com/coreos/etcd/client"
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/pkg/transport"
+	"google.golang.org/grpc"
 	"io"
 	"log"
 	"net/http"
@@ -974,6 +975,7 @@ func newClient(uinfo *userInfo) (*clientv3.Client, error) {
 		Endpoints:            endpoints,
 		DialTimeout:          time.Second * time.Duration(*connectTimeout),
 		TLS:                  tlsConfig,
+		DialOptions: []grpc.DialOption{grpc.WithBlock()},
 	}
 	if *useAuth {
 		conf.Username = uinfo.uname
