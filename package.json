@@ -1,6 +1,6 @@
 {
   "name": "etcdkeeper",
-  "version": "1.3.5",
+  "version": "2.0.0",
   "description": "* added suitable default server for hkube * added refresh node * sync connect to etcd server",
   "main": "index.js",
   "scripts": {
